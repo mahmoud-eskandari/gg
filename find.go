@@ -52,3 +52,15 @@ func CountByValue[C comparable](heyStack []C, needle C) int {
 
 	return res
 }
+
+// Some returns true if just one of itemd in heyStack is equal to needle.
+// Example: gg.Some([]int{1, 2, 3, 4, 5, 6, 5, 0}, 5) == true
+func Some[C comparable](heyStack []C, needle C) bool {
+	for _, item := range heyStack {
+		if item == needle {
+			return true
+		}
+	}
+
+	return false
+}

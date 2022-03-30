@@ -41,3 +41,9 @@ func TestCountByValue(t *testing.T) {
 	is.Equal(CountByValue([]int{}, 2), 0)
 	is.Equal(CountByValue([]string{"A", "b", "a"}, "A"), 1)
 }
+func TestSome(t *testing.T) {
+	is := assert.New(t)
+
+	is.Equal(Some([]int{0, 1, 2, 1, 2, 3}, 2), true)
+	is.Equal(Some([]int{0, 1}, 2), false)
+}
